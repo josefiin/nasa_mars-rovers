@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nasa Mars Rovers</title>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=space-grotesk@300,700,500,400,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=array@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-wrapper container">
+        <h1>NASA MARS ROVERS</h1>
+        <div class="toggle">
+          <p id="toggle-text"></p>
+          <label class="switchBtn">
+            <input type="checkbox" id="switchBtn" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <section class="name-container">
+        <form action class="sign-form">
+          <h2>Choose your Space Name</h2>
+          <!-- <label for="spacename"></label> -->
+          <div class="input-icon-wrapper">
+            <img src="/pen-icon.svg" id="icon" alt="icon-pen" />
+            <input
+              type="text"
+              id="spacename"
+              name="spacename"
+              placeholder="Pick your space name"
+              class="input-field"
+            />
+          </div>
+          <button class="btn" id="btn-submit" disabled>Show my name</button>
+        </form>
+        <h2 id="display-name"></h2>
+      </section>
+      <!-- Error ligger mellan name-container och main för att den inte ska ta upp plats i dessa element.  -->
+      <div id="error"></div>
+      <main id="card-container"></main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

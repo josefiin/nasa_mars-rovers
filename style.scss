@@ -1,0 +1,269 @@
+@import 'sass/reset';
+@import 'sass/variables';
+@import 'sass/base';
+@import 'sass/typography';
+
+
+header {
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .toggle {
+            display: flex;
+            align-items: center;
+
+            @media (min-width: 590px) {
+                gap: 1rem;
+            }
+
+            p {
+                display: none;
+
+                @media (min-width: 590px) {
+                    display: block;
+                }
+            }
+
+            .switchBtn {
+                position: relative;
+                display: inline-block;
+                width: 52px;
+                height: 28px;
+
+                input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+
+                    &:checked {
+
+                        + {
+                            .slider {
+                                background-color: $primary-dark;
+
+                                &:before {
+                                    transform: translateX(24px);
+                                    background-color: $darkmode-text;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: $darkmode-text;
+                    border-radius: 20px;
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        height: 20px;
+                        width: 20px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: $primary-dark;
+                        border-radius: 50%;
+                        transition: .4s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container {
+    margin: auto;
+    max-width: 1400px;
+    padding: 1rem;
+
+    @media (min-width: 590px) {
+        padding: 1.5rem;
+    }
+
+    .name-container {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        @media (min-width: 590px) {
+            margin-top: 8rem;
+            margin-bottom: 5rem;
+        }
+
+        .sign-form {
+            margin: auto;
+            margin-bottom: 3rem;
+            border-radius: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+
+            @media (min-width: 590px) {
+                max-width: 590px;
+                margin-bottom: 4rem;
+            }
+
+            // label {
+            //     font-size: 1rem;
+            //     font-weight: 500;
+            //     width: 100%;
+            // }
+
+            .input-icon-wrapper {
+                position: relative;
+                width: 100%;
+                margin-top: 3rem;
+                margin-bottom: 1rem;
+
+                @media (min-width: 590px) {
+                    margin-bottom: 2rem;
+                }
+
+
+                #icon {
+                    width: 20px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+
+                .input-field {
+                    width: 100%;
+                    padding-left: 2rem;
+                    padding-bottom: 1rem;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid $text-color-secondary;
+                    font-family: $primary-font;
+                    font-size: 1rem;
+                    color: $primary-light;
+
+                    &::placeholder {
+                        font-size: 1rem;
+                        color: $text-color-secondary;
+                    }
+
+                    &.focusBorder {
+                        outline: none;
+                        border-bottom: 2px solid $primary-light;
+                    }
+                }
+            }
+
+
+            #btn-submit {
+                width: 100%;
+                border: none;
+                background-color: $primary-light;
+                padding: 1rem 2rem;
+                color: $primary-dark;
+                font-family: $primary-font;
+                font-weight: 500;
+                font-size: 1rem;
+                text-align: center;
+                cursor: pointer;
+                transition-duration: 0.5s;
+
+                &:disabled {
+                    color: $text-color-secondary;
+                    cursor: unset;
+                }
+
+                @media (min-width:590px) {
+                    width: auto;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+    #error {
+        display: none;
+        color: $highlite;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    #card-container {
+        margin-bottom: 6rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .card {
+            border: 1px solid $primary-light;
+            padding: 1.4rem;
+
+            .image-container {
+                height: 248px;
+                margin-bottom: 1rem;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .text-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            flex: 0 0 100%;
+
+
+            @media (min-width:590px) {
+                flex: 0 0 calc((100% - 2rem) / 2);
+            }
+
+            @media (min-width:980px) {
+                flex: 0 0 calc((100% - 4rem) / 3);
+            }
+
+            @media (min-width:1200px) {
+                flex: 0 0 calc((100% - 6rem) / 4);
+            }
+        }
+    }
+}
+
+body.light-theme {
+    background-color: $primary-light;
+    transition: 0.3s;
+    color: $lightmode-text;
+
+    .container .name-container .sign-form {
+        .input-field {
+            color: $primary-dark;
+
+            &.focusBorder {
+                border-bottom: 2px solid $primary-dark;
+            }
+        }
+
+        #btn-submit {
+            background-color: $primary-dark;
+            color: $primary-light;
+
+            &:disabled {
+                color: $text-color-secondary;
+                cursor: unset;
+            }
+        }
+    }
+
+    #card-container .card {
+        border: 1px solid $primary-dark;
+    }
+}

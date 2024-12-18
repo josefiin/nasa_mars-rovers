@@ -1,0 +1,305 @@
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #10100E;
+  font-family: "Space Grotesk", sans-serif;
+  color: #FFFFE4;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+@media (min-width: 590px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+@media (min-width: 590px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+h2#display-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h2#display-name .display-name {
+  font-family: "Array", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+@media (min-width: 590px) {
+  h2#display-name .display-name {
+    font-size: 4rem;
+    margin-top: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+h4 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+p {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+header .header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-wrapper .toggle {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 590px) {
+  header .header-wrapper .toggle {
+    gap: 1rem;
+  }
+}
+header .header-wrapper .toggle p {
+  display: none;
+}
+@media (min-width: 590px) {
+  header .header-wrapper .toggle p {
+    display: block;
+  }
+}
+header .header-wrapper .toggle .switchBtn {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+header .header-wrapper .toggle .switchBtn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header .header-wrapper .toggle .switchBtn input:checked + .slider {
+  background-color: #10100E;
+}
+header .header-wrapper .toggle .switchBtn input:checked + .slider:before {
+  transform: translateX(24px);
+  background-color: #FFFFE4;
+}
+header .header-wrapper .toggle .switchBtn .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFE4;
+  border-radius: 20px;
+}
+header .header-wrapper .toggle .switchBtn .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #10100E;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.container {
+  margin: auto;
+  max-width: 1400px;
+  padding: 1rem;
+}
+@media (min-width: 590px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
+.container .name-container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 590px) {
+  .container .name-container {
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+  }
+}
+.container .name-container .sign-form {
+  margin: auto;
+  margin-bottom: 3rem;
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+@media (min-width: 590px) {
+  .container .name-container .sign-form {
+    max-width: 590px;
+    margin-bottom: 4rem;
+  }
+}
+.container .name-container .sign-form .input-icon-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 590px) {
+  .container .name-container .sign-form .input-icon-wrapper {
+    margin-bottom: 2rem;
+  }
+}
+.container .name-container .sign-form .input-icon-wrapper #icon {
+  width: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.container .name-container .sign-form .input-icon-wrapper .input-field {
+  width: 100%;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #898989;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  color: #ffffea;
+}
+.container .name-container .sign-form .input-icon-wrapper .input-field::-moz-placeholder {
+  font-size: 1rem;
+  color: #898989;
+}
+.container .name-container .sign-form .input-icon-wrapper .input-field::placeholder {
+  font-size: 1rem;
+  color: #898989;
+}
+.container .name-container .sign-form .input-icon-wrapper .input-field.focusBorder {
+  outline: none;
+  border-bottom: 2px solid #ffffea;
+}
+.container .name-container .sign-form #btn-submit {
+  width: 100%;
+  border: none;
+  background-color: #ffffea;
+  padding: 1rem 2rem;
+  color: #10100E;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.container .name-container .sign-form #btn-submit:disabled {
+  color: #898989;
+  cursor: unset;
+}
+@media (min-width: 590px) {
+  .container .name-container .sign-form #btn-submit {
+    width: auto;
+    margin-left: auto;
+  }
+}
+.container #error {
+  display: none;
+  color: #5c015c;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.container #card-container {
+  margin-bottom: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.container #card-container .card {
+  border: 1px solid #ffffea;
+  padding: 1.4rem;
+  flex: 0 0 100%;
+}
+.container #card-container .card .image-container {
+  height: 248px;
+  margin-bottom: 1rem;
+}
+.container #card-container .card .image-container img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container #card-container .card .text-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 590px) {
+  .container #card-container .card {
+    flex: 0 0 calc((100% - 2rem) / 2);
+  }
+}
+@media (min-width: 980px) {
+  .container #card-container .card {
+    flex: 0 0 calc((100% - 4rem) / 3);
+  }
+}
+@media (min-width: 1200px) {
+  .container #card-container .card {
+    flex: 0 0 calc((100% - 6rem) / 4);
+  }
+}
+
+body.light-theme {
+  background-color: #ffffea;
+  transition: 0.3s;
+  color: #10100E;
+}
+body.light-theme .container .name-container .sign-form .input-field {
+  color: #10100E;
+}
+body.light-theme .container .name-container .sign-form .input-field.focusBorder {
+  border-bottom: 2px solid #10100E;
+}
+body.light-theme .container .name-container .sign-form #btn-submit {
+  background-color: #10100E;
+  color: #ffffea;
+}
+body.light-theme .container .name-container .sign-form #btn-submit:disabled {
+  color: #898989;
+  cursor: unset;
+}
+body.light-theme #card-container .card {
+  border: 1px solid #10100E;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,11 @@
+body {
+    background-color: $primary-dark;
+    font-family: $primary-font;
+    color: $darkmode-text;
+    -webkit-font-smoothing: antialiased;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
